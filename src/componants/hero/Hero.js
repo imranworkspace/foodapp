@@ -1,5 +1,8 @@
-import { Box, Container, Grid, styled } from '@mui/material'
+import { Box, Container, Grid, Typography, styled } from '@mui/material'
 import breakfast from  '../../static/breakfast.jpg'
+import burger from  '../../static/burger.jpg'
+import burger1 from  '../../static/burger1.jpg'
+import appetizer from  '../../static/appetizer.jpg'
 const Hero = () => {
     
     const StyledCard = styled(Box)({
@@ -8,7 +11,27 @@ const Hero = () => {
         backgroundRepeat:'no-repeat',
         backgroundPosition:'center',
         backgroundSize:'cover',
-        height:400,
+        //height:400, /* dont put like this instead of use below one*/
+        height:{sx:200,md:400},
+        cursor:"pointer",
+        "&:hover":{
+          opacity:0.8,
+          boxSizing:'borderBox',
+          zIndex:1,
+          transition:`all 0.45s ease`,   
+        }
+    })
+
+    const StyledTypography = styled(Typography)({
+      textAlign:'center',
+      color:'white',
+      backgroundColor:'tomato',
+      fontSize:20,
+    })
+
+    const StyledWrapper = styled(Box)({
+      paddingTop:'140%',
+      width:'80%'
     })
 
     return (
@@ -20,17 +43,43 @@ const Hero = () => {
         {/* total 4 images for that 3+3+3+3=12, 4 items shows, screen size bydefault is 12*/}
         <Grid item md={3} xs={6}>
             {/* `url not used single or double qoute its button below esc on your keyboard */}
-            <StyledCard sx={{backgroundImage:`url(${breakfast})`}}></StyledCard>
+            <StyledCard sx={{backgroundImage:`url(${breakfast})`}}>
+            {/* wrapping text Title */}
+            <StyledWrapper>
+                {/* Title on image  */}
+                <StyledTypography> 
+                  breakfast
+                </StyledTypography>
+              </StyledWrapper>
+            </StyledCard>
         </Grid>
         {/*  xs={6} is used for small screen and 6+6=12, 2 items shows  */}
         <Grid item md={3} xs={6}>
-            <StyledCard sx={{backgroundImage:`url(${breakfast})`}}></StyledCard>
+            <StyledCard sx={{backgroundImage:`url(${burger})`}}>
+            <StyledWrapper>
+                <StyledTypography> 
+                  burger
+                </StyledTypography>
+              </StyledWrapper>
+            </StyledCard>
         </Grid>
         <Grid item md={3} xs={6}>
-            <StyledCard sx={{backgroundImage:`url(${breakfast})`}}></StyledCard>
+            <StyledCard sx={{backgroundImage:`url(${burger1})`}}>
+            <StyledWrapper>
+                <StyledTypography> 
+                burger1
+                </StyledTypography>
+              </StyledWrapper>
+            </StyledCard>
         </Grid>
         <Grid item md={3} xs={6}>
-            <StyledCard sx={{backgroundImage:`url(${breakfast})`}}></StyledCard>
+            <StyledCard sx={{backgroundImage:`url(${appetizer})`}}>
+            <StyledWrapper>
+                <StyledTypography> 
+                appetizer
+                </StyledTypography>
+              </StyledWrapper>
+            </StyledCard>
         </Grid>
       </Grid>
     </Container>
