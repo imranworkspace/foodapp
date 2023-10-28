@@ -1,5 +1,5 @@
-import React from 'react'
-import { AppBar, Box, Toolbar, Typography, styled } from '@mui/material'
+import React, { useState } from 'react'
+import { AppBar, Box, Drawer, List, ListItem, ListItemButton, Toolbar, Typography, styled } from '@mui/material'
 import TextField from '@mui/material/TextField';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -22,6 +22,9 @@ const Navbar = () => {
     {Name:"Contact us",Link:'#'},
     {Name:"Subscribe",Link:'#'}]
 
+
+  const [openMenu,setOpenMenu] = useState(false)  
+
 //   elevation for shadow 0 for no shadow
   return <AppBar color='default' elevation={0}> 
         {/* app name */}
@@ -40,9 +43,24 @@ const Navbar = () => {
                 <TextField sx={{display:{xs:"none", md:'flex'}}} label="search here" variant="outlined" color="warning" />
                 {/* add menu icon here  */}
                 {/* xs - extra small screen, md - for medium screen */}
-                <MenuIcon sx={{ display: {xs:"flex", md:"none"},cursor:"pointer"}}></MenuIcon>
+                <MenuIcon sx={{ display: {xs:"flex", md:"none"},cursor:"pointer"}}
+                onClick={()=>setOpenMenu(!openMenu)}></MenuIcon>
             </Box>
         </StyledToolbar>
+        {/* add drawer */}
+        <Drawer
+        //  open close drawer action here 
+          anchor={"top"} open={openMenu} onClose={()=>setOpenMenu(!openMenu)}
+         >
+          {/* items of drawer */}
+          <List>
+            <ListItem>
+            {MenuItems.map((item)=>(
+                    <ListItemButton variant='body2'>{item.Name}</ListItemButton>
+                ))}
+            </ListItem>
+          </List>
+        </Drawer>
   </AppBar>
 }
 
