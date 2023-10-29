@@ -69,9 +69,9 @@ const Navbar = () => {
           
     </AppBar>
     {/* add Main Title below drawer  */}
-    <Box sx={{display:'flex',justifyContent:'center'}}>
-      <Typography variant='h5' mr={1}>Simple Receipe for Coders</Typography>
-      <Typography variant='h5' color={'tomato'} sx={{fontFamily: 'Splash, cursive'}}>Simple Receipe for Coders</Typography>
+    <Box sx={{display:'flex',justifyContent:'center',flexDirection: {xs:'column',md:'row'} }}> 
+      <Typography align='center' variant='h5' mr={{xs:0,md:1}}>Simple Receipe for Coders</Typography>
+      <Typography variant='h5' color={'tomato'} align='center' sx={{fontFamily: 'Splash, cursive'}}>Simple Receipe for Coders</Typography>
     </Box>
   </>
 );
