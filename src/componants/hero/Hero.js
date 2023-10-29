@@ -5,22 +5,29 @@ import burger1 from  '../../static/burger1.jpg'
 import appetizer from  '../../static/appetizer.jpg'
 const Hero = () => {
     
-    const StyledCard = styled(Box)({
+    const StyledCard = styled(Box)(({theme})=>({
         display:'flex',
         justifyContent:'center',
         backgroundRepeat:'no-repeat',
         backgroundPosition:'center',
         backgroundSize:'cover',
         //height:400, /* dont put like this instead of use below one*/
-        height:{sx:200,md:400},
+        //height:{sx:200,md:400}, /* another option using material ui usint theme */
         cursor:"pointer",
+        // for height we use material ui theme option up for above md and down for sm screens
+        [theme.breakpoints.up('md')]:{
+          height:400,
+        },
+        [theme.breakpoints.down('sm')]:{
+          height:200,
+        },
         "&:hover":{
           opacity:0.8,
           boxSizing:'borderBox',
           zIndex:1,
           transition:`all 0.45s ease`,   
         }
-    })
+    }));
 
     const StyledTypography = styled(Typography)({
       textAlign:'center',
@@ -29,10 +36,15 @@ const Hero = () => {
       fontSize:20,
     })
 
-    const StyledWrapper = styled(Box)({
-      paddingTop:'140%',
+    const StyledWrapper = styled(Box)(({theme})=>({
+      [theme.breakpoints.up('md')]:{
+        paddingTop:'140%',
+      },
+      [theme.breakpoints.down('md')]:{ /* there is no need to set sm, md is ok please see changes on your mobile device vertically and horizontally*/
+        paddingTop:'40%',
+      },
       width:'80%'
-    })
+    }));
 
     return (
     // add grid view row - horizontal elements, columns-  vertical elelments
