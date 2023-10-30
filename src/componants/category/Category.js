@@ -56,7 +56,7 @@ const Category = () => {
 
   return (
     // for single dimention we use Stack instead of Container from material ui
-    <Stack Container direction={'row'} mt={4} spacing={4} ml={3} sx={{overflow:'auto'}}>  
+    <Stack Container direction={'row'} mt={4} spacing={3} ml={3} sx={{overflow:'auto'}}>  
       <CardBox>
       <StyledCard sx={{backgroundImage:`url(${dinner})`}} />
         <StyledTypography>

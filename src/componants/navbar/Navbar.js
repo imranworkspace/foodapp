@@ -31,8 +31,9 @@ const Navbar = () => {
     <AppBar color='default' position='sticky' elevation={0}> 
           {/* app name */}
           <StyledToolbar>
-              <Box flex={{ xs:25, md:1 }}>
-                  <Typography variant='h4' color={'tomato'}  sx={{fontFamily: 'Splash, cursive'}}>FoodApp</Typography>
+              <Box flex={{ xs:25, md:1 }}> 
+              {/* add alignment for small and md screens using textAlign prop */}
+                  <Typography variant='h4' color={'tomato'}  sx={{fontFamily: 'Splash, cursive'}} textAlign={{xs:"center",md:"left"}}>FoodApp</Typography>
               </Box>
               {/* menu items */}
               <MenuBox  flex={1} sx={{display:{xs:"none", md:'flex'}}}>
@@ -69,7 +70,7 @@ const Navbar = () => {
           
     </AppBar>
     {/* add Main Title below drawer  */}
-    <Box sx={{display:'flex',justifyContent:'center',flexDirection: {xs:'column',md:'row'} }}> 
+    <Box sx={{display:'flex',justifyContent:'center',flexDirection: {xs:'column',md:'row'},padding:1}}> 
       <Typography align='center' variant='h5' mr={{xs:0,md:1}}>Simple Receipe for Coders</Typography>
       <Typography variant='h5' color={'tomato'} align='center' sx={{fontFamily: 'Splash, cursive'}}>Simple Receipe for Coders</Typography>
     </Box>
