@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, Pagination, Typography } from '@mui/material'
 import React from 'react'
 import Postcards from './Postcards'
 
@@ -41,6 +41,8 @@ const Posts = () => {
                 <Postcards  myDirection={'block'}/>    
             </Grid>
         </Grid>
+        {/* add pagination  */}
+        <Pagination count={10} />
     </Box>
   )
 }
