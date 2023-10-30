@@ -4,7 +4,7 @@ import {Send as SendIcon} from '@mui/icons-material'
 const Rightbar = () => {
   return (
     <Box sx={{mt:3}}>
-      <Typography variant='h5' align='center'>HEY AM ZUNAISHA</Typography>
+      <Typography variant='h5' align='center'>HEY I AM ZUNAISHA</Typography>
       <CardMedia
         component={'img'} 
         image={chef} alt='burger_image'

@@ -7,7 +7,7 @@ import burger from '../static/burger.jpg'
 const Postcards = (myDirection) => {
   return (
     <Box mt={3}>
-        <Link href='#' sx={{textDecoration:'none'}}>
+        <Link href='http://localhost:3000/details' sx={{textDecoration:'none'}}>
             <Card>
                 <Box 
                 

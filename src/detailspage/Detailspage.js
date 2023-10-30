@@ -3,6 +3,7 @@ import React from 'react'
 import Category from '../componants/category/Category'
 import burger1 from "../static/burger1.jpg"
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import Suggessions from '../suggessions/Suggessions';
 const Detailspage = () => {
   return (
     <Container>
@@ -72,8 +73,9 @@ const Detailspage = () => {
       </Typography>
       <Typography variant='h5' align='center' mb={1} bgcolor={'black'} color={'white'}>
         You may also like !!!
-        </Typography>
-
+      </Typography>
+      {/* add suggessions component here */}
+      <Suggessions />
     </Container>
   )
 }
