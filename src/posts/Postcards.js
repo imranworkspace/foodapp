@@ -1,12 +1,21 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material'
 import React from 'react'
 import burger from '../static/burger.jpg'
-const Postcards = () => {
+
+
+// myDirection parameter used for check display condition, came from small means block or medium, large means flex type
+const Postcards = (myDirection) => {
   return (
     <Box mt={3}>
         <Link href='#' sx={{textDecoration:'none'}}>
             <Card>
-                <Box sx={{display:'flex',flexDirection:'row'}}>
+                <Box 
+                
+                sx={{display:{xs:'block',
+                sm:`${myDirection}`,
+                md:`${myDirection}`},
+                flexDirection:'row'}}>
+                
                     <CardMedia 
                         component={'img'} 
                         image={burger} alt='burger_image'

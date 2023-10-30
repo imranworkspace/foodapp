@@ -9,14 +9,36 @@ const Posts = () => {
         Latest Receipe {" "}</Typography>
         {/* manage all cards into vertically shape */}
         <Grid container columnSpacing={{xs:0,sm:1,md:1}} direction={'column'}>
-            <Grid item sx>
-                <Postcards />
+            {/* add screens */}
+            <Grid item md={6} sm={6}>
+                <Postcards myDirection={'flex'}/>
             </Grid>
-            <Grid item sx>
-                <Postcards />    
+            <Grid item md={6} sm={6}>
+                <Postcards  myDirection={'flex'}/>    
             </Grid>
-            <Grid item sx>
-                <Postcards />    
+            <Grid item md={6} sm={6}>
+                <Postcards  myDirection={'flex'}/>    
+            </Grid>
+        </Grid>
+        <Typography
+            variant='h4'
+            bgcolor='black'
+            color='white'
+            align='center'
+            mt={4}
+            mb={4}>Most Popular
+        </Typography>
+
+        <Grid container columnSpacing={{xs:0,sm:1,md:1}} direction={'row'}>
+            {/* add screens */}
+            <Grid item md={6} sm={6}>
+                <Postcards myDirection={'block'}/>
+            </Grid>
+            <Grid item md={6} sm={6}>
+                <Postcards  myDirection={'block'}/>    
+            </Grid>
+            <Grid item md={6} sm={6}>
+                <Postcards  myDirection={'block'}/>    
             </Grid>
         </Grid>
     </Box>
