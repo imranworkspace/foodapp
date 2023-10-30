@@ -3,6 +3,7 @@ import breakfast from  '../../static/breakfast.jpg'
 import burger from  '../../static/burger.jpg'
 import burger1 from  '../../static/burger1.jpg'
 import appetizer from  '../../static/appetizer.jpg'
+import Category from '../category/Category'
 const Hero = () => {
     
     const StyledCard = styled(Box)(({theme})=>({
@@ -18,7 +19,7 @@ const Hero = () => {
         [theme.breakpoints.up('md')]:{
           height:400,
         },
-        [theme.breakpoints.down('sm')]:{
+        [theme.breakpoints.down('md')]:{
           height:200,
         },
         "&:hover":{
@@ -94,6 +95,8 @@ const Hero = () => {
             </StyledCard>
         </Grid>
       </Grid>
+      {/* for alignment we put our category container here */}
+      <Category />
     </Container>
   )
 }
