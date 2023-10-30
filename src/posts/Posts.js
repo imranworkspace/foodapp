@@ -1,4 +1,4 @@
-import { Box, Grid, Pagination, Typography } from '@mui/material'
+import { Box, Grid, Pagination, Stack, Typography } from '@mui/material'
 import React from 'react'
 import Postcards from './Postcards'
 
@@ -41,8 +41,11 @@ const Posts = () => {
                 <Postcards  myDirection={'block'}/>    
             </Grid>
         </Grid>
-        {/* add pagination  */}
-        <Pagination count={10} />
+        {/* add pagination is belong from 1 dimention so use stack mui component */}
+        <Stack spacing={2} mt={2} mb={2} justifyContent={'center'} alignItems={'center'}>
+            <Pagination count={10} color='warning'/>
+        </Stack>
+        
     </Box>
   )
 }
