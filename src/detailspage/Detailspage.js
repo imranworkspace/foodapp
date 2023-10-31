@@ -36,7 +36,7 @@ const Detailspage = () => {
             <ListItemIcon>
                     <DoubleArrowIcon/>
             </ListItemIcon>
-            <ListItemText primary='Menu' />
+            <ListItemText primary='Pizza' />
         </ListItemButton>
 
         <ListItemButton>
